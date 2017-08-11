@@ -1,0 +1,7 @@
+BasedOnStyle: 'LLVM'
+AllowShortBlocksOnASingleLine: false
+AllowShortFunctionsOnASingleLine: 'Empty'
+BreakBeforeBraces: 'Linux'
+ColumnLimit: 80
+IndentWidth: 4
+NamespaceIndentation: 'All'
