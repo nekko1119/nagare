@@ -10,6 +10,7 @@ if(MSVC)
     else()
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
     endif()
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /WX")
 elseif("{CMAKE_CXX_COMPILER_ID MATCHES}" STREQUAL "Clang")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -W -Werror -Wall -Weverything -Wno-c++11-compat -Wno-c++11-compat-pedantic")
 elseif(CMAKE_COMPILER_IS_GNUCXX)
@@ -19,14 +20,13 @@ endif()
 
 add_executable(
     nagare_test
-    nagare_test.cpp
-    nagare_add_test.cpp
+    stream_test.cpp
 )
 
 set_target_properties(
     nagare_test
     PROPERTIES
-    CXX_STANDARD 11
+    CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
     CXX_EXTENSIONS ON
 )
