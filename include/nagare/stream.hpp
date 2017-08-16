@@ -2,6 +2,7 @@
 #define NAGARE_STREAM_HPP
 
 #include <nagare/config.hpp>
+#include <nagare/iterator/map_iterator.hpp>
 
 namespace nagare {
 
@@ -43,6 +44,13 @@ namespace nagare {
             for (auto it = begin_; it != end_; ++it) {
                 f(*it);
             }
+        }
+
+        template <typename F>
+        constexpr stream<map_iterator<Iterator, F>> map(F f) const
+        {
+            return stream<map_iterator<Iterator, F>>{
+                make_map_iterator(begin_, f), make_map_iterator(end_, f)};
         }
     };
 }

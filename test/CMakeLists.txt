@@ -26,7 +26,7 @@ add_executable(
 set_target_properties(
     nagare_test
     PROPERTIES
-    CXX_STANDARD 14
+    CXX_STANDARD 11
     CXX_STANDARD_REQUIRED ON
     CXX_EXTENSIONS ON
 )
